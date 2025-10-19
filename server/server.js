@@ -24,4 +24,4 @@ app.use('/api/resumes', resumeRouter)
 app.use('/api/ai', aiRouter)
 
 export const handler = serverless(app);
-export default handler;
+
