@@ -5,7 +5,6 @@ import connectDB from './configs/db.js';
 import userRouter from './routes/userRoutes.js';
 import resumeRouter from './routes/resumeRoutes.js';
 import aiRouter from './routes/aiRoutes.js';
-import serverless from 'serverless-http'
 
 const app = express();
 
@@ -23,5 +22,6 @@ app.use('/api/users', userRouter)
 app.use('/api/resumes', resumeRouter)
 app.use('/api/ai', aiRouter)
 
-export const handler = serverless(app);
+module.exports = app;
+
 
