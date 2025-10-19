@@ -8,7 +8,7 @@ import aiRouter from './routes/aiRoutes.js';
 import serverless from 'serverless-http'
 
 const app = express();
-// const PORT = process.env.PORT || 3000;
+
 
 //Database connection
 await connectDB();
@@ -23,8 +23,5 @@ app.use('/api/users', userRouter)
 app.use('/api/resumes', resumeRouter)
 app.use('/api/ai', aiRouter)
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
-
 export const handler = serverless(app);
+export default handler;
