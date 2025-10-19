@@ -5,7 +5,7 @@ import connectDB from './configs/db.js';
 import userRouter from './routes/userRoutes.js';
 import resumeRouter from './routes/resumeRoutes.js';
 import aiRouter from './routes/aiRoutes.js';
-import serverless from 'serverless-http'
+// import serverless from 'serverless-http'
 
 
 const app = express();
@@ -17,16 +17,17 @@ await connectDB();
 app.use(express.json());
 app.use(cors());
 
-app.get('/server', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Server is live...');
 });
 app.use('/api/users', userRouter)
 app.use('/api/resumes', resumeRouter)
 app.use('/api/ai', aiRouter)
 
-export const handler = serverless(app);
+// export const handler = serverless(app);
 
-// module.exports = app;
+module.exports = app;
+
 
 
 
